@@ -14,6 +14,7 @@
 		BF39C75D2569F8C800CAC6DC /* Practica_7__Clima_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF39C75B2569F8C800CAC6DC /* Practica_7__Clima_.xcdatamodeld */; };
 		BF39C75F2569F8C900CAC6DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF39C75E2569F8C900CAC6DC /* Assets.xcassets */; };
 		BF39C7622569F8C900CAC6DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF39C7602569F8C900CAC6DC /* LaunchScreen.storyboard */; };
+		BF39C76B256A389700CAC6DC /* ClimaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39C76A256A389700CAC6DC /* ClimaManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BF39C75E2569F8C900CAC6DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF39C7612569F8C900CAC6DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF39C7632569F8C900CAC6DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF39C76A256A389700CAC6DC /* ClimaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimaManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				BF39C7602569F8C900CAC6DC /* LaunchScreen.storyboard */,
 				BF39C7632569F8C900CAC6DC /* Info.plist */,
 				BF39C75B2569F8C800CAC6DC /* Practica_7__Clima_.xcdatamodeld */,
+				BF39C76A256A389700CAC6DC /* ClimaManager.swift */,
 			);
 			path = "Practica 7 (Clima)";
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 				BF39C7532569F8C800CAC6DC /* AppDelegate.swift in Sources */,
 				BF39C7552569F8C800CAC6DC /* SceneDelegate.swift in Sources */,
 				BF39C75D2569F8C800CAC6DC /* Practica_7__Clima_.xcdatamodeld in Sources */,
+				BF39C76B256A389700CAC6DC /* ClimaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
