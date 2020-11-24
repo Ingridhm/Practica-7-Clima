@@ -96,6 +96,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="BackgroundImage" destination="thr-ru-unR" id="9oe-Wa-Jps"/>
+                        <outlet property="BuscarField" destination="q8P-NU-LzB" id="17U-tk-WGB"/>
                         <outlet property="CiudadLabel" destination="i4G-md-wOB" id="2Cf-iQ-nl5"/>
                         <outlet property="ClimaImage" destination="QiB-Zh-a7W" id="COf-f8-mn2"/>
                         <outlet property="TemperaturaLabel" destination="CUO-vx-Rym" id="qj0-vl-Sdr"/>

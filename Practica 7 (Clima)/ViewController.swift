@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
     @IBOutlet weak var ClimaImage: UIImageView!
     @IBOutlet weak var TemperaturaLabel: UILabel!
     @IBOutlet weak var CiudadLabel: UILabel!
+    @IBOutlet weak var BackgroundImage: UIImageView!
     
     var manager = ClimaManager()
     
@@ -49,6 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
         DispatchQueue.main.async {
             self.TemperaturaLabel.text = "\(clima.TDecimal) °C"
             self.ClimaImage.image = UIImage(named: clima.condicion)
+            self.BackgroundImage.image = UIImage(named: clima.background)
         }
     }
     

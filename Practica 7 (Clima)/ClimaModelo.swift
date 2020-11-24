@@ -30,6 +30,23 @@ struct ClimaModelo {
         }
     }
     
+    var background: String {
+        switch id {
+        case 300...321:
+            return "after rain night.jpg"
+        case 600...622:
+            return "snowy.jpg"
+        case 701...781:
+            return "windy.jpg"
+        case 801...804:
+            return "cloudy.jpg"
+        case 800:
+            return "fair.jpg"
+        default:
+            return "amanecer.jpg"
+        }
+    }
+    
     var TDecimal: String {
         return String(format: "%.1f", temperatura)
     }
