@@ -11,14 +11,20 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
 
     @IBOutlet weak var BuscarField: UITextField!
     @IBOutlet weak var ClimaImage: UIImageView!
+    @IBOutlet weak var ClimaLabel: UILabel!
     @IBOutlet weak var TemperaturaLabel: UILabel!
     @IBOutlet weak var CiudadLabel: UILabel!
     @IBOutlet weak var BackgroundImage: UIImageView!
+    @IBOutlet weak var TemperaturaView: UIView!
+    
     
     var manager = ClimaManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //TemperaturaView.backgroundColor = UIColor(white: 1, alpha: 0.6)
+        TemperaturaView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        TemperaturaView.layer.cornerRadius = 20
         manager.delegado = self
         BuscarField.delegate = self
     }
@@ -48,11 +54,11 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
         print(clima.descripcion)
         print(clima.TDecimal)
         DispatchQueue.main.async {
+            self.ClimaLabel.text = clima.descripcion.capitalized
             self.TemperaturaLabel.text = "\(clima.TDecimal) °C"
             self.ClimaImage.image = UIImage(named: clima.condicion)
             self.BackgroundImage.image = UIImage(named: clima.background)
         }
     }
-    
 }
 
