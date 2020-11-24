@@ -8,7 +8,7 @@
 import Foundation
 
 struct ClimaManager {
-    let clima = "https://api.openweathermap.org/data/2.5/weather?appid=698cb29c0a1e70d1a30a0a9982f6a95a&units=metrics"
+    let clima = "https://api.openweathermap.org/data/2.5/weather?appid=698cb29c0a1e70d1a30a0a9982f6a95a&units=metric&lang=es"
     
     func ObtenerClima(ciudad: String) {
         let urls = "\(clima)&q=\(ciudad)"
@@ -31,10 +31,27 @@ struct ClimaManager {
             return
         }
         if let datos = data {
-            let d = String(data: datos, encoding: .utf8)
-            print("Datos")
-            print(d!)
-            return
+            //let d = String(data: datos, encoding: .utf8)
+            //print("Datos")
+            //print(d!)
+            Decodificar(clima: datos)
+        }
+    }
+    
+    func Decodificar(clima: Data) {
+        let decoder = JSONDecoder()
+        do {
+            let decoded = try decoder.decode(ClimaData.self, from: clima)
+            print(decoded.name)
+            print(decoded.cod)
+            print(decoded.main.temp)
+            print(decoded.main.humidity)
+            print(decoded.weather[0].description)
+            print(decoded.coord.lat)
+            print(decoded.coord.lon)
+        }
+        catch {
+            print(error)
         }
     }
 }
