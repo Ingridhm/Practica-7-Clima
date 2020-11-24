@@ -7,17 +7,18 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegate {
 
     @IBOutlet weak var BuscarField: UITextField!
     @IBOutlet weak var ClimaImage: UIImageView!
     @IBOutlet weak var TemperaturaLabel: UILabel!
     @IBOutlet weak var CiudadLabel: UILabel!
     
-    let manager = ClimaManager()
+    var manager = ClimaManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        manager.delegado = self
         BuscarField.delegate = self
     }
 
@@ -39,6 +40,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
         else {
             BuscarField.placeholder = "Ingresa una ciudad"
             return false
+        }
+    }
+    
+    func Actualizar(clima: ClimaModelo) {
+        print(clima.descripcion)
+        print(clima.TDecimal)
+        DispatchQueue.main.async {
+            self.TemperaturaLabel.text = "\(clima.TDecimal) °C"
+            self.ClimaImage.image = UIImage(named: clima.condicion)
         }
     }
     

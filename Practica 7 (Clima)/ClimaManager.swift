@@ -7,11 +7,16 @@
 
 import Foundation
 
+protocol ClimaManagerDelegate {
+    func Actualizar(clima: ClimaModelo)
+}
+
 struct ClimaManager {
-    let clima = "https://api.openweathermap.org/data/2.5/weather?appid=698cb29c0a1e70d1a30a0a9982f6a95a&units=metric&lang=es"
+    var delegado: ClimaManagerDelegate?
+    let url = "https://api.openweathermap.org/data/2.5/weather?appid=698cb29c0a1e70d1a30a0a9982f6a95a&units=metric&lang=es"
     
     func ObtenerClima(ciudad: String) {
-        let urls = "\(clima)&q=\(ciudad)"
+        let urls = "\(url)&q=\(ciudad)"
         print(urls)
         Solicitar(urls: urls)
     }
@@ -31,27 +36,26 @@ struct ClimaManager {
             return
         }
         if let datos = data {
-            //let d = String(data: datos, encoding: .utf8)
-            //print("Datos")
-            //print(d!)
-            Decodificar(clima: datos)
+            if let clima = self.Decodificar(clima: datos) {
+                delegado?.Actualizar(clima: clima)
+            }
         }
     }
     
-    func Decodificar(clima: Data) {
+    func Decodificar(clima: Data) -> ClimaModelo? {
         let decoder = JSONDecoder()
         do {
             let decoded = try decoder.decode(ClimaData.self, from: clima)
-            print(decoded.name)
-            print(decoded.cod)
-            print(decoded.main.temp)
-            print(decoded.main.humidity)
-            print(decoded.weather[0].description)
-            print(decoded.coord.lat)
-            print(decoded.coord.lon)
+            let id = decoded.weather[0].id
+            let ciudad = decoded.name
+            let descripcion = decoded.weather[0].description
+            let temperatura = decoded.main.temp
+            let clima = ClimaModelo(id: id, ciudad: ciudad, descripcion: descripcion, temperatura: temperatura)
+            return clima
         }
         catch {
             print(error)
+            return nil
         }
     }
 }
