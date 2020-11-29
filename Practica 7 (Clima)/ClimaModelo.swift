@@ -15,33 +15,41 @@ struct ClimaModelo {
     
     var condicion: String {
         switch id {
+        case 200...232:
+            return "icon-thunderstorm-day.svg"
         case 300...321:
-            return "icon-rainy.svg"
+            return "icon-drizzle-day.svg"
+        case 500...531:
+            return "icon-rainy-day.svg"
         case 600...622:
-            return "icon-snowy.svg"
+            return "icon-snowy-day.svg"
         case 701...781:
-            return "icon-windy.svg"
+            return "icon-athmosphere-say.svg"
         case 801...804:
-            return "icon-cloudy.svg"
+            return "icon-partially-cloudy-day.svg"
         case 800:
-            return "icon-sunny.svg"
+            return "icon-clear-day.svg"
         default:
-            return "icon-partially-cloudy.svg"
+            return "icon-cloudy-day.svg"
         }
     }
     
     var background: String {
         switch id {
+        case 200...232:
+            return "background-thunderstorm-day.jpg"
         case 300...321:
-            return "after rain night.jpg"
+            return "background-drizzle-night.jpg"
+        case 500...531:
+            return "background-drizzle-night.jpg"
         case 600...622:
-            return "snowy.jpg"
+            return "background-snowy-day.jpg"
         case 701...781:
-            return "windy.jpg"
+            return "backgound-foggy-day.jpg"
         case 801...804:
-            return "cloudy.jpg"
+            return "background-cloudy-night.jpg"
         case 800:
-            return "fair.jpg"
+            return "background-clear-day.jpg"
         default:
             return "amanecer.jpg"
         }

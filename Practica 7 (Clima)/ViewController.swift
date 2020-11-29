@@ -16,15 +16,14 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
     @IBOutlet weak var CiudadLabel: UILabel!
     @IBOutlet weak var BackgroundImage: UIImageView!
     @IBOutlet weak var TemperaturaView: UIView!
+    @IBOutlet weak var BusquedaView: UIView!
     
     
     var manager = ClimaManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //TemperaturaView.backgroundColor = UIColor(white: 1, alpha: 0.6)
-        TemperaturaView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
-        TemperaturaView.layer.cornerRadius = 20
+        Estilos()
         manager.delegado = self
         BuscarField.delegate = self
     }
@@ -59,6 +58,14 @@ class ViewController: UIViewController, UITextFieldDelegate, ClimaManagerDelegat
             self.ClimaImage.image = UIImage(named: clima.condicion)
             self.BackgroundImage.image = UIImage(named: clima.background)
         }
+    }
+    
+    func Estilos() {
+        TemperaturaView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        TemperaturaView.layer.cornerRadius = 20
+        BusquedaView.backgroundColor = UIColor.white.withAlphaComponent(0.6)
+        BusquedaView.layer.cornerRadius = 10
+        
     }
 }
 
