@@ -9,6 +9,7 @@ import Foundation
 
 protocol ClimaManagerDelegate {
     func Actualizar(clima: ClimaModelo)
+    func Error(error: Error)
 }
 
 struct ClimaManager {
@@ -18,6 +19,11 @@ struct ClimaManager {
     func ObtenerClima(ciudad: String) {
         let urls = "\(url)&q=\(ciudad)"
         print(urls)
+        Solicitar(urls: urls)
+    }
+    
+    func ObtenerClima(latitud: Double, longitud: Double) {
+        let urls = "\(url)&lat=\(latitud)&lon=\(longitud)"
         Solicitar(urls: urls)
     }
     
@@ -31,8 +37,9 @@ struct ClimaManager {
     
     func Handle(data: Data?, respuesta: URLResponse?, error: Error?) {
         if (error != nil) {
-            print("Error")
-            print(error!)
+            //print("Error")
+            //print(error!)
+            delegado?.Error(error: error!)
             return
         }
         if let datos = data {
@@ -54,7 +61,8 @@ struct ClimaManager {
             return clima
         }
         catch {
-            print(error)
+            //print(error)
+            delegado?.Error(error: error)
             return nil
         }
     }

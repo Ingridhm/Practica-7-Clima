@@ -83,6 +83,9 @@
                                                     <constraint firstAttribute="width" constant="60" id="ixv-kP-kfJ"/>
                                                 </constraints>
                                                 <state key="normal" image="localization"/>
+                                                <connections>
+                                                    <action selector="UbicacionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oYP-Q1-us3"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ubicación" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q8P-NU-LzB">
                                                 <rect key="frame" x="70" y="10" width="244" height="40"/>
