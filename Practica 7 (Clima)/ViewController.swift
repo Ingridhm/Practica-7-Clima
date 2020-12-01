@@ -18,6 +18,15 @@ import CoreLocation
     @IBOutlet weak var BackgroundImage: UIImageView!
     @IBOutlet weak var TemperaturaView: UIView!
     @IBOutlet weak var BusquedaView: UIView!
+    @IBOutlet weak var DetallesView: UIView!
+    @IBOutlet weak var SensacionLabel: UILabel!
+    @IBOutlet weak var MaximaLabel: UILabel!
+    @IBOutlet weak var MinimaLabel: UILabel!
+    @IBOutlet weak var HumedadLabel: UILabel!
+    @IBOutlet weak var VientoView: UIView!
+    @IBOutlet weak var VelocidadLabel: UILabel!
+    @IBOutlet weak var DireccionLabel: UILabel!
+    
     
     var climamanager = ClimaManager()
     var locationmanager = CLLocationManager()
@@ -33,10 +42,14 @@ import CoreLocation
     }
     
     func Estilos() {
-        TemperaturaView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
-        TemperaturaView.layer.cornerRadius = 20
         BusquedaView.backgroundColor = UIColor.white.withAlphaComponent(0.6)
         BusquedaView.layer.cornerRadius = 10
+        TemperaturaView.backgroundColor = UIColor.gray.withAlphaComponent(0.6)
+        TemperaturaView.layer.cornerRadius = 20
+        DetallesView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
+        DetallesView.layer.cornerRadius = 10
+        VientoView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
+        VientoView.layer.cornerRadius = 10
     }
     
     
@@ -99,6 +112,12 @@ extension ViewController: ClimaManagerDelegate {
             self.ClimaImage.image = UIImage(named: clima.condicion)
             self.BackgroundImage.image = UIImage(named: clima.background)
             self.CiudadLabel.text = clima.ciudad
+            self.SensacionLabel.text = "\(clima.Sensacion) °C"
+            self.MaximaLabel.text = "\(clima.Maxima) °C"
+            self.MinimaLabel.text = "\(clima.Minima) °C"
+            self.HumedadLabel.text = "\(String(clima.humedad)) %"
+            self.VelocidadLabel.text = "\(clima.velocidad) m/s"
+            self.DireccionLabel.text = "\(String(clima.direccion))°"
         }
     }
     

@@ -37,8 +37,6 @@ struct ClimaManager {
     
     func Handle(data: Data?, respuesta: URLResponse?, error: Error?) {
         if (error != nil) {
-            //print("Error")
-            //print(error!)
             delegado?.Error(error: error!)
             return
         }
@@ -57,7 +55,13 @@ struct ClimaManager {
             let ciudad = decoded.name
             let descripcion = decoded.weather[0].description
             let temperatura = decoded.main.temp
-            let clima = ClimaModelo(id: id, ciudad: ciudad, descripcion: descripcion, temperatura: temperatura)
+            let sensacion = decoded.main.feels_like
+            let maxima = decoded.main.temp_max
+            let minima = decoded.main.temp_min
+            let humedad = decoded.main.humidity
+            let velocidad = decoded.wind.speed
+            let direccion = decoded.wind.deg
+            let clima = ClimaModelo(id: id, ciudad: ciudad, descripcion: descripcion, temperatura: temperatura, sensacion: sensacion, maxima: maxima, minima: minima, humedad: humedad, velocidad: velocidad, direccion: direccion)
             return clima
         }
         catch {
