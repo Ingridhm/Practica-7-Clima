@@ -96,9 +96,17 @@ extension ViewController: CLLocationManagerDelegate {
 //MARK:- TexlField Changed
 extension ViewController: UITextFieldDelegate {
     @IBAction func Buscar(_ sender: UIButton) {
-        CiudadLabel.text = BuscarField.text
-        climamanager.ObtenerClima(ciudad: BuscarField.text!)
-        forecastmanager.ObtenerClima(ciudad: BuscarField.text!)
+        if (BuscarField.text == "") {
+            let alert = UIAlertController(title: "Campo en blanco", message: "Por favor ingrese el nombre de una ciudad", preferredStyle: .alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            alert.addAction(aceptar)
+            present(alert, animated: true, completion: nil)
+        }
+        else {
+            CiudadLabel.text = BuscarField.text
+            climamanager.ObtenerClima(ciudad: BuscarField.text!)
+            forecastmanager.ObtenerClima(ciudad: BuscarField.text!)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -142,8 +150,36 @@ extension ViewController: ClimaManagerDelegate {
     func Error(error: Error) {
         print(error.localizedDescription)
         DispatchQueue.main.async {
-            self.CiudadLabel.text = error.localizedDescription
+            self.Limpiar()
+            let alert = UIAlertController(title: "Ciudad no encontrada", message: "Por favor verifique que el nombre de la ciudad ingresada sea correcto", preferredStyle: .alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            alert.addAction(aceptar)
+            self.present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func Limpiar() {
+        self.CiudadLabel.text = "Desconocido"
+        self.ClimaLabel.text = "-"
+        self.TemperaturaLabel.text = "-"
+        self.ClimaImage.image = UIImage(named: "icon-cloudy-day.svg")
+        self.BackgroundImage.image = UIImage(named: "night2.jpeg")
+        self.SensacionLabel.text = "-"
+        self.MaximaLabel.text = "_"
+        self.MinimaLabel.text = "-"
+        self.HumedadLabel.text = "-"
+        self.VelocidadLabel.text = "-"
+        self.DireccionLabel.text = "-"
+        self.Dia1Image.image = UIImage(named: "icon-cloudy-day.svg")
+        self.Dia1Label.text = "-"
+        self.Dia2Image.image = UIImage(named: "icon-cloudy-day.svg")
+        self.Dia2Label.text = "-"
+        self.Dia3Image.image = UIImage(named: "icon-cloudy-day.svg")
+        self.Dia3Label.text = "-"
+        self.Dia4Image.image = UIImage(named: "icon-cloudy-day.svg")
+        self.Dia4Label.text = "-"
+        self.Dia5Image.image = UIImage(named: "icon-cloudy-day.svg")
+        self.Dia5Label.text = "-"
     }
 }
 
