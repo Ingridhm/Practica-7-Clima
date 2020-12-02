@@ -17,7 +17,7 @@ struct ClimaModelo {
     let minima: Double
     let humedad: Int
     let velocidad: Double
-    let direccion: Int
+    let direccion: Double
     
     var condicion: String {
         switch id {
@@ -61,7 +61,7 @@ struct ClimaModelo {
         }
     }
     
-    var TDecimal: String {
+    var Temperatura: String {
         return String(format: "%.1f", temperatura)
     }
     
@@ -79,5 +79,33 @@ struct ClimaModelo {
     
     var Velocidad: String {
         return String(format: "%.1f", velocidad)
+    }
+    
+    var Direccion: String {
+        if (direccion > 337.5) {
+            return "Norte";
+        }
+        if (direccion > 292.5) {
+            return "Noroeste";
+        }
+        if (direccion > 247.5) {
+            return "Oeste";
+        }
+        if (direccion > 202.5) {
+            return "Suroeste";
+        }
+        if (direccion > 157.5) {
+            return "Sur";
+        }
+        if (direccion > 122.5) {
+            return "Sureste";
+        }
+        if (direccion > 67.5) {
+            return "Este";
+        }
+        if (direccion > 22.5) {
+            return "Noroeste";
+        }
+        return "Norte"
     }
 }

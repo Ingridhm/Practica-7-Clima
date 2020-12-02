@@ -105,10 +105,10 @@ extension ViewController: UITextFieldDelegate {
 extension ViewController: ClimaManagerDelegate {
     func Actualizar(clima: ClimaModelo) {
         print(clima.descripcion)
-        print(clima.TDecimal)
+        print(clima.Temperatura)
         DispatchQueue.main.async {
             self.ClimaLabel.text = clima.descripcion.capitalized
-            self.TemperaturaLabel.text = "\(clima.TDecimal) °C"
+            self.TemperaturaLabel.text = "\(clima.Temperatura) °C"
             self.ClimaImage.image = UIImage(named: clima.condicion)
             self.BackgroundImage.image = UIImage(named: clima.background)
             self.CiudadLabel.text = clima.ciudad
@@ -117,7 +117,7 @@ extension ViewController: ClimaManagerDelegate {
             self.MinimaLabel.text = "\(clima.Minima) °C"
             self.HumedadLabel.text = "\(String(clima.humedad)) %"
             self.VelocidadLabel.text = "\(clima.velocidad) m/s"
-            self.DireccionLabel.text = "\(String(clima.direccion))°"
+            self.DireccionLabel.text = clima.Direccion
         }
     }
     
