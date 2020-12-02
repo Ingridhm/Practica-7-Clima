@@ -6,13 +6,14 @@
 //
 
 import Foundation
+import UIKit
 
 protocol ForecastManagerDelegate {
     func Actualizar(forecast: ForecastModelo)
     func Error(error: Error)
 }
 
-struct ForecastManager {
+struct ForecastManager{
     var forecastdelegado: ForecastManagerDelegate?
     let url = "https://api.openweathermap.org/data/2.5/forecast?appid=698cb29c0a1e70d1a30a0a9982f6a95a&units=metric&lang=es"
     
@@ -55,9 +56,6 @@ struct ForecastManager {
         var temperatura = [Double]()
         do {
             let decoded = try decoder.decode(ForecastData.self, from: forecast)
-            //let id = decoded.list[1].weather[0].id
-            //let descripcion = decoded.list[1].weather[0].description
-            //let temperatura = decoded.list[1].main.temp
             for l in decoded.list {
                 id.append(l.weather[0].id)
                 descripcion.append(l.weather[0].description)

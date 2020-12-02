@@ -297,8 +297,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="AXa-zB-fG5">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="88"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/02" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgt-bg-bxl">
-                                                        <rect key="frame" x="7" y="0.0" width="36" height="17"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Día 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgt-bg-bxl">
+                                                        <rect key="frame" x="9.5" y="0.0" width="31.5" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -321,7 +321,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="VxK-cv-LQc">
                                                 <rect key="frame" x="76" y="0.0" width="50" height="88"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/03" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwB-u1-7lO">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Día 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwB-u1-7lO">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -345,7 +345,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="vuP-Bo-fes">
                                                 <rect key="frame" x="152" y="0.0" width="50" height="88"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/04" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-VB-bg2">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Día 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jh-VB-bg2">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -369,7 +369,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="bgQ-E5-pl5">
                                                 <rect key="frame" x="228" y="0.0" width="50" height="88"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/05" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3u-f7-DJF">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Día 4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3u-f7-DJF">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -393,7 +393,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="yXp-7P-PpB">
                                                 <rect key="frame" x="304" y="0.0" width="50" height="88"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/06" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbd-su-uai">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Día 5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbd-su-uai">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="17"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <nil key="textColor"/>
@@ -468,6 +468,11 @@
                         <outlet property="Dia5Image" destination="M7C-a2-wDV" id="50f-sq-Z5L"/>
                         <outlet property="Dia5Label" destination="Onu-xB-xN7" id="Ujb-5D-01g"/>
                         <outlet property="DireccionLabel" destination="4jA-vr-NoT" id="BvB-Mx-5sP"/>
+                        <outlet property="Fecha1Label" destination="kgt-bg-bxl" id="QXw-BF-YTz"/>
+                        <outlet property="Fecha2Label" destination="CwB-u1-7lO" id="zNb-kp-MXj"/>
+                        <outlet property="Fecha3Label" destination="3Jh-VB-bg2" id="TvH-u9-Fpz"/>
+                        <outlet property="Fecha4Label" destination="A3u-f7-DJF" id="aYP-GF-PAS"/>
+                        <outlet property="Fecha5Label" destination="Jbd-su-uai" id="xqi-AG-dAC"/>
                         <outlet property="ForecastVew" destination="LDp-9v-Utf" id="Atu-4c-o04"/>
                         <outlet property="HumedadLabel" destination="Ihc-Cp-PlZ" id="IaH-qU-JdA"/>
                         <outlet property="MaximaLabel" destination="PWd-ao-vYX" id="I6t-rg-H8H"/>

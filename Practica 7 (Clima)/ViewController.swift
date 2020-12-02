@@ -37,6 +37,11 @@ import CoreLocation
     @IBOutlet weak var Dia3Label: UILabel!
     @IBOutlet weak var Dia4Label: UILabel!
     @IBOutlet weak var Dia5Label: UILabel!
+    @IBOutlet weak var Fecha1Label: UILabel!
+    @IBOutlet weak var Fecha2Label: UILabel!
+    @IBOutlet weak var Fecha3Label: UILabel!
+    @IBOutlet weak var Fecha4Label: UILabel!
+    @IBOutlet weak var Fecha5Label: UILabel!
     
     
     var climamanager = ClimaManager()
@@ -106,6 +111,7 @@ extension ViewController: UITextFieldDelegate {
             CiudadLabel.text = BuscarField.text
             climamanager.ObtenerClima(ciudad: BuscarField.text!)
             forecastmanager.ObtenerClima(ciudad: BuscarField.text!)
+            BuscarField.text = ""
         }
     }
     
@@ -159,27 +165,32 @@ extension ViewController: ClimaManagerDelegate {
     }
     
     func Limpiar() {
-        self.CiudadLabel.text = "Desconocido"
-        self.ClimaLabel.text = "-"
-        self.TemperaturaLabel.text = "-"
-        self.ClimaImage.image = UIImage(named: "icon-cloudy-day.svg")
-        self.BackgroundImage.image = UIImage(named: "night2.jpeg")
-        self.SensacionLabel.text = "-"
-        self.MaximaLabel.text = "_"
-        self.MinimaLabel.text = "-"
-        self.HumedadLabel.text = "-"
-        self.VelocidadLabel.text = "-"
-        self.DireccionLabel.text = "-"
-        self.Dia1Image.image = UIImage(named: "icon-cloudy-day.svg")
-        self.Dia1Label.text = "-"
-        self.Dia2Image.image = UIImage(named: "icon-cloudy-day.svg")
-        self.Dia2Label.text = "-"
-        self.Dia3Image.image = UIImage(named: "icon-cloudy-day.svg")
-        self.Dia3Label.text = "-"
-        self.Dia4Image.image = UIImage(named: "icon-cloudy-day.svg")
-        self.Dia4Label.text = "-"
-        self.Dia5Image.image = UIImage(named: "icon-cloudy-day.svg")
-        self.Dia5Label.text = "-"
+        CiudadLabel.text = "Desconocido"
+        ClimaLabel.text = "-"
+        TemperaturaLabel.text = "?"
+        ClimaImage.image = UIImage(named: "icon-cloudy-day.svg")
+        BackgroundImage.image = UIImage(named: "dawn.jpeg")
+        SensacionLabel.text = "-"
+        MaximaLabel.text = "_"
+        MinimaLabel.text = "-"
+        HumedadLabel.text = "-"
+        VelocidadLabel.text = "-"
+        DireccionLabel.text = "-"
+        Dia1Image.image = UIImage(named: "icon-cloudy-day.svg")
+        Dia1Label.text = "-"
+        Dia2Image.image = UIImage(named: "icon-cloudy-day.svg")
+        Dia2Label.text = "-"
+        Dia3Image.image = UIImage(named: "icon-cloudy-day.svg")
+        Dia3Label.text = "-"
+        Dia4Image.image = UIImage(named: "icon-cloudy-day.svg")
+        Dia4Label.text = "-"
+        Dia5Image.image = UIImage(named: "icon-cloudy-day.svg")
+        Dia5Label.text = "-"
+        Fecha1Label.text = "Día 1"
+        Fecha2Label.text = "Día 2"
+        Fecha3Label.text = "Día 3"
+        Fecha4Label.text = "Día 4"
+        Fecha5Label.text = "Día 5"
     }
 }
 
@@ -197,6 +208,11 @@ extension ViewController: ForecastManagerDelegate {
             self.Dia4Label.text = "\(forecast.Temperatura(t: forecast.temperatura[30])) °C"
             self.Dia5Image.image = UIImage(named: forecast.Id(i: forecast.id[38]))
             self.Dia5Label.text = "\(forecast.Temperatura(t: forecast.temperatura[38])) °C"
+            self.Fecha1Label.text = "12 / 03"
+            self.Fecha2Label.text = "12 / 04"
+            self.Fecha3Label.text = "12 / 05"
+            self.Fecha4Label.text = "12 / 06"
+            self.Fecha5Label.text = "12 / 07"
         }
     }
 }

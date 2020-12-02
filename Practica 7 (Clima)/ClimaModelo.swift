@@ -30,7 +30,7 @@ struct ClimaModelo {
         case 600...622:
             return "icon-snowy-day.svg"
         case 701...781:
-            return "icon-athmosphere-say.svg"
+            return "icon-atmosphere-day.svg"
         case 801...804:
             return "icon-partially-cloudy-day.svg"
         case 800:
@@ -51,7 +51,7 @@ struct ClimaModelo {
         case 600...622:
             return "background-snowy-day.jpg"
         case 701...781:
-            return "backgound-foggy-day.jpg"
+            return "background-foggy-night.jpg"
         case 801...804:
             return "background-cloudy-night.jpg"
         case 800:
