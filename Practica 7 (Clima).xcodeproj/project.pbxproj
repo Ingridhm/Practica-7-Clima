@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0C2F3525771B50009A4767 /* ForecastData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C2F3425771B50009A4767 /* ForecastData.swift */; };
+		BF0C2F3825771BF1009A4767 /* ForecastModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C2F3725771BF1009A4767 /* ForecastModelo.swift */; };
+		BF0C2F3B25771CF1009A4767 /* ForecastManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0C2F3A25771CF1009A4767 /* ForecastManager.swift */; };
 		BF39C7532569F8C800CAC6DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39C7522569F8C800CAC6DC /* AppDelegate.swift */; };
 		BF39C7552569F8C800CAC6DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39C7542569F8C800CAC6DC /* SceneDelegate.swift */; };
 		BF39C7572569F8C800CAC6DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39C7562569F8C800CAC6DC /* ViewController.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF0C2F3425771B50009A4767 /* ForecastData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastData.swift; sourceTree = "<group>"; };
+		BF0C2F3725771BF1009A4767 /* ForecastModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastModelo.swift; sourceTree = "<group>"; };
+		BF0C2F3A25771CF1009A4767 /* ForecastManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastManager.swift; sourceTree = "<group>"; };
 		BF39C74F2569F8C800CAC6DC /* Practica 7 (Clima).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Practica 7 (Clima).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF39C7522569F8C800CAC6DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF39C7542569F8C800CAC6DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,9 @@
 				BF39C76A256A389700CAC6DC /* ClimaManager.swift */,
 				BFBED145256C435900E8F53D /* ClimaData.swift */,
 				BFF9F7C0256CC49F0022B3EC /* ClimaModelo.swift */,
+				BF0C2F3425771B50009A4767 /* ForecastData.swift */,
+				BF0C2F3725771BF1009A4767 /* ForecastModelo.swift */,
+				BF0C2F3A25771CF1009A4767 /* ForecastManager.swift */,
 			);
 			path = "Practica 7 (Clima)";
 			sourceTree = "<group>";
@@ -149,12 +158,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF0C2F3825771BF1009A4767 /* ForecastModelo.swift in Sources */,
 				BF39C7572569F8C800CAC6DC /* ViewController.swift in Sources */,
 				BF39C7532569F8C800CAC6DC /* AppDelegate.swift in Sources */,
 				BF39C7552569F8C800CAC6DC /* SceneDelegate.swift in Sources */,
+				BF0C2F3B25771CF1009A4767 /* ForecastManager.swift in Sources */,
 				BF39C75D2569F8C800CAC6DC /* Practica_7__Clima_.xcdatamodeld in Sources */,
 				BFBED146256C435900E8F53D /* ClimaData.swift in Sources */,
 				BFF9F7C1256CC49F0022B3EC /* ClimaModelo.swift in Sources */,
+				BF0C2F3525771B50009A4767 /* ForecastData.swift in Sources */,
 				BF39C76B256A389700CAC6DC /* ClimaManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

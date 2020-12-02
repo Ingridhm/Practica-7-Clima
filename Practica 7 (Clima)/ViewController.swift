@@ -26,15 +26,28 @@ import CoreLocation
     @IBOutlet weak var VientoView: UIView!
     @IBOutlet weak var VelocidadLabel: UILabel!
     @IBOutlet weak var DireccionLabel: UILabel!
+    @IBOutlet weak var ForecastVew: UIView!
+    @IBOutlet weak var Dia1Image: UIImageView!
+    @IBOutlet weak var Dia2Image: UIImageView!
+    @IBOutlet weak var Dia3Image: UIImageView!
+    @IBOutlet weak var Dia4Image: UIImageView!
+    @IBOutlet weak var Dia5Image: UIImageView!
+    @IBOutlet weak var Dia1Label: UILabel!
+    @IBOutlet weak var Dia2Label: UILabel!
+    @IBOutlet weak var Dia3Label: UILabel!
+    @IBOutlet weak var Dia4Label: UILabel!
+    @IBOutlet weak var Dia5Label: UILabel!
     
     
     var climamanager = ClimaManager()
+    var forecastmanager = ForecastManager()
     var locationmanager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Estilos()
         climamanager.delegado = self
+        forecastmanager.forecastdelegado = self
         BuscarField.delegate = self
         locationmanager.delegate = self
         locationmanager.requestWhenInUseAuthorization()
@@ -50,6 +63,8 @@ import CoreLocation
         DetallesView.layer.cornerRadius = 10
         VientoView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
         VientoView.layer.cornerRadius = 10
+        ForecastVew.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
+        ForecastVew.layer.cornerRadius = 10
     }
     
     
@@ -69,6 +84,7 @@ extension ViewController: CLLocationManagerDelegate {
             let longitud = ubicacion.coordinate.longitude
             print("Latitud: \(latitud), Longitud: \(longitud)")
             climamanager.ObtenerClima(latitud: latitud, longitud: longitud)
+            forecastmanager.ObtenerClima(latitud: latitud, longitud: longitud)
         }
     }
     
@@ -82,6 +98,7 @@ extension ViewController: UITextFieldDelegate {
     @IBAction func Buscar(_ sender: UIButton) {
         CiudadLabel.text = BuscarField.text
         climamanager.ObtenerClima(ciudad: BuscarField.text!)
+        forecastmanager.ObtenerClima(ciudad: BuscarField.text!)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -101,11 +118,12 @@ extension ViewController: UITextFieldDelegate {
     }
 }
 
-//MARK:- Actualizar UI
+//MARK:- Actualizar UI Clima
 extension ViewController: ClimaManagerDelegate {
     func Actualizar(clima: ClimaModelo) {
-        print(clima.descripcion)
-        print(clima.Temperatura)
+        print("CLIMA")
+        print("Descripción: \(clima.descripcion)")
+        print("Temperatura: \(clima.Temperatura)")
         DispatchQueue.main.async {
             self.ClimaLabel.text = clima.descripcion.capitalized
             self.TemperaturaLabel.text = "\(clima.Temperatura) °C"
@@ -125,6 +143,24 @@ extension ViewController: ClimaManagerDelegate {
         print(error.localizedDescription)
         DispatchQueue.main.async {
             self.CiudadLabel.text = error.localizedDescription
+        }
+    }
+}
+
+//MARK:- Actualizar UI Forecast
+extension ViewController: ForecastManagerDelegate {
+    func Actualizar(forecast: ForecastModelo) {
+        DispatchQueue.main.async {
+            self.Dia1Image.image = UIImage(named: forecast.Id(i: forecast.id[0]))
+            self.Dia1Label.text = "\(forecast.Temperatura(t: forecast.temperatura[0])) °C"
+            self.Dia2Image.image = UIImage(named: forecast.Id(i: forecast.id[6]))
+            self.Dia2Label.text = "\(forecast.Temperatura(t: forecast.temperatura[6])) °C"
+            self.Dia3Image.image = UIImage(named: forecast.Id(i: forecast.id[14]))
+            self.Dia3Label.text = "\(forecast.Temperatura(t: forecast.temperatura[14])) °C"
+            self.Dia4Image.image = UIImage(named: forecast.Id(i: forecast.id[30]))
+            self.Dia4Label.text = "\(forecast.Temperatura(t: forecast.temperatura[30])) °C"
+            self.Dia5Image.image = UIImage(named: forecast.Id(i: forecast.id[38]))
+            self.Dia5Label.text = "\(forecast.Temperatura(t: forecast.temperatura[38])) °C"
         }
     }
 }
